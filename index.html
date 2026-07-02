@@ -155,6 +155,13 @@
     color:var(--paper-dim);
     text-align:center;
     padding:10px;
+    overflow:hidden;
+  }
+  .book .cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
   }
   .book h3{
     font-family:'Fraunces', serif;
@@ -258,7 +265,7 @@
     <h2 class="section-title">Books</h2>
 
     <div class="book">
-      <div class="cover">COVER<br>ART</div>
+      <div class="cover"><img src="CursedCover.jpg" alt="Capa de Cursed Nightmare, de Chuck Lund"></div>
       <div>
         <h3>Cursed Nightmare</h3>
         <div class="meta">Novel · Horror</div>
