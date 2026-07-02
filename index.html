@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chuck Lund — Author</title>
+<meta name="description" content="Chuck Lund writes horror fiction from the shadows. Author of Cursed Nightmare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:      #0b0908;
+    --paper:    #ede7dd;
+    --paper-dim:#8c8378;
+    --oxblood:  #6b1e23;
+    --line:     #2a2422;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Newsreader', serif;
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--oxblood); color:var(--paper); }
+
+  a{ color:var(--paper); }
+
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  header.top{
+    position:sticky; top:0; z-index:10;
+    background:rgba(11,9,8,0.88);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  header.top .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--paper);
+    text-decoration:none;
+  }
+  nav a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--paper-dim);
+    margin-left:22px;
+    transition:color .2s;
+  }
+  nav a:hover{ color:var(--paper); }
+
+  /* HERO */
+  .hero{
+    padding:120px 0 96px;
+    position:relative;
+  }
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    display:block;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(40px, 7vw, 64px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    color:var(--paper);
+  }
+  .hero p.lede{
+    margin-top:26px;
+    max-width:46ch;
+    color:var(--paper-dim);
+    font-size:19px;
+    font-style:italic;
+  }
+
+  /* marginalia — the signature element */
+  .marginalia{
+    margin-top:56px;
+    max-width:340px;
+    padding:18px 20px 20px;
+    border:1px solid var(--line);
+    border-left:3px solid var(--oxblood);
+    background:rgba(107,30,35,0.05);
+    transform:rotate(-0.6deg);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    line-height:1.6;
+    color:var(--paper-dim);
+  }
+  .marginalia strong{
+    display:block;
+    color:var(--paper);
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+
+  section{ padding:64px 0; border-top:1px solid var(--line); }
+
+  h2.section-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--oxblood);
+    margin-bottom:28px;
+  }
+
+  /* ABOUT */
+  #about p{ margin-bottom:18px; color:var(--paper); }
+  #about p:last-child{ margin-bottom:0; }
+
+  /* BOOKS */
+  .book{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:26px;
+    align-items:start;
+  }
+  .book .cover{
+    width:120px; height:180px;
+    border:1px solid var(--line);
+    background:linear-gradient(160deg,#1b1513,#0b0908);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px; letter-spacing:0.08em;
+    color:var(--paper-dim);
+    text-align:center;
+    padding:10px;
+  }
+  .book h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:26px;
+    margin-bottom:6px;
+  }
+  .book .meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--paper-dim);
+    margin-bottom:14px;
+  }
+  .book p{ color:var(--paper); margin-bottom:16px; }
+  .btn{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--paper);
+    border:1px solid var(--paper-dim);
+    padding:10px 18px;
+    transition:border-color .2s, color .2s;
+  }
+  .btn:hover{ border-color:var(--oxblood); color:var(--oxblood); }
+
+  .upcoming{
+    margin-top:40px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--paper-dim);
+  }
+
+  /* CONTACT */
+  #contact p{ color:var(--paper-dim); margin-bottom:20px; max-width:48ch; }
+  .contact-email{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:17px;
+    color:var(--paper);
+    text-decoration:none;
+    border-bottom:1px solid var(--oxblood);
+    padding-bottom:2px;
+  }
+
+  footer{
+    padding:36px 0 60px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--paper-dim);
+    text-transform:uppercase;
+  }
+
+  @media (max-width:520px){
+    .book{ grid-template-columns:1fr; }
+    .book .cover{ width:100px; height:150px; }
+    nav a{ margin-left:14px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Chuck Lund</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#books">Books</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Horror Fiction</span>
+    <h1>Chuck Lund writes<br>from the shadows.</h1>
+    <p class="lede">Ordinary places. Quiet evil. The long shadow the past casts over the present.</p>
+
+    <div class="marginalia">
+      <strong>Marginal note</strong>
+      Holds a master's degree researching Montague Summers — the eccentric English scholar whose writings on vampires, witchcraft, and the occult still haunt horror writers a century on.
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title">About</h2>
+    <p>Little is known about Chuck Lund beyond what his stories reveal: an obsession with the ordinary places where evil quietly takes root, and a fascination with the long shadow the past casts over the present.</p>
+    <p>When he isn't writing, he is, by his own admission, "somewhere quieter than most people would like."</p>
+  </div>
+</section>
+
+<section id="books">
+  <div class="wrap">
+    <h2 class="section-title">Books</h2>
+
+    <div class="book">
+      <div class="cover">COVER<br>ART</div>
+      <div>
+        <h3>Cursed Nightmare</h3>
+        <div class="meta">Novel · Horror</div>
+        <p>Larry Collins has been haunted since childhood by a satanic ritual in the small town of Cabot, Maine — the story Lund has described as "the one that wouldn't let me sleep until I wrote it down."</p>
+        <a class="btn" href="#" data-note="replace with live Amazon link">Read on Amazon →</a>
+      </div>
+    </div>
+
+    <p class="upcoming">Also available in Portuguese as <em>Pesadelo Maldito</em>.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2 class="section-title">Contact</h2>
+    <p>For interviews, review copies, and correspondence.</p>
+    <a class="contact-email" href="mailto:CharlesSLund@proton.me">CharlesSLund@proton.me</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© Chuck Lund</div>
+</footer>
+
+</body>
+</html>
